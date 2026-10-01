@@ -58,7 +58,8 @@ window.addEventListener('scroll', function() {
 function setupVideoCarouselAutoplay() {
     const carouselVideos = document.querySelectorAll('.results-carousel video, .video-grid video');
     
-    if (carouselVideos.length === 0) return;
+    // Show posters only for users who prefer reduced motion
+    if (carouselVideos.length === 0 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

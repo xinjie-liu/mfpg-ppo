@@ -15,7 +15,7 @@
   <!-- Open Graph / Facebook -->
   <!-- TODO: Update the URLs below if the final site URL differs from https://xinjie-liu.github.io/mfpg-ppo/ -->
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="University of Texas at Austin">
+  <meta property="og:site_name" content="MFPG-PPO">
   <meta property="og:title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
   <meta property="og:description" content="MFPG-PPO stabilizes data-scarce on-policy RL by using abundant low-fidelity simulation data as a control variate for scarce high-fidelity policy gradient estimates.">
   <meta property="og:url" content="https://xinjie-liu.github.io/mfpg-ppo/">
@@ -134,10 +134,7 @@
     "keywords": ["reinforcement learning", "multi-fidelity", "policy gradient", "control variates", "PPO", "robot learning"],
     "abstract": "Policy gradient methods for on-policy reinforcement learning can become unstable when expensive, scarce target-domain data yield noisy gradient estimates. We address this challenge by complementing limited high-fidelity target-domain data with abundant, cheap, but biased low-fidelity data, e.g., from a simplified simulator. Most existing methods directly optimize biased objectives based on low-fidelity data. In contrast, the recently introduced multi-fidelity policy gradient (MFPG) framework uses low-fidelity data solely to construct a control variate that reduces variance and improves high-fidelity data efficiency without biasing the policy gradient estimator. However, published work on MFPG is limited to REINFORCE on small-scale simulation tasks. We develop MFPG for modern actor-critic learning in GPU-parallel simulation and on a physical robot. Our analysis and experiments show that naive extensions to proximal policy optimization (PPO) can lose cross-fidelity correlation or inflate variance. Our MFPG-PPO addresses these failures by redesigning the sampling, advantage estimation, and control variate construction to preserve cross-fidelity correlation, and by monitoring estimator uncertainty to prevent variance inflation. We also introduce a budget-aware MFPG-PPO to divide a fixed sampling budget among high- and low-fidelity data sources. Across simulated robot locomotion tasks of varying low-to-high-fidelity transfer difficulty and high-fidelity data budgets, MFPG-PPO improves upon PPO trained on high-fidelity data alone in nearly all settings, and consistently matches the performance of PPO trained with 16x more high-fidelity data on the hardest task at the smallest high-fidelity budgets. In contrast, most baselines that use low-fidelity data perform well only where direct low-to-high-fidelity transfer succeeds. MFPG-PPO enables stable learning on a physical Franka arm using only 4 real-robot episodes per update and no human demonstrations.",
     "isAccessibleForFree": true,
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://xinjie-liu.github.io/mfpg-ppo/"
-    },
+    "mainEntityOfPage": "https://xinjie-liu.github.io/mfpg-ppo/",
     "about": [
       {"@type": "Thing", "name": "Reinforcement learning"},
       {"@type": "Thing", "name": "Robot learning"}
@@ -279,7 +276,7 @@ End teaser video -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content prose">
           TODO: Replace with your paper abstract
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
@@ -312,7 +309,7 @@ End paper abstract -->
             <span class="lf">low-fidelity (LF)</span> data, e.g., from a simplified simulator.
           </li>
           <li>
-            <strong>Learning stays anchored to HF data.</strong>
+            <strong>Robust to LF data biases.</strong>
             Most existing multi-fidelity methods directly optimize biased objectives based on LF data, which can easily
             degrade performance in the target HF environment. MFPG-PPO instead uses multi-fidelity data in a more reliable
             way that anchors learning to the HF data.
@@ -331,18 +328,18 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Challenge</h2>
-        <div class="content has-text-justified">
+        <div class="content prose">
           <p>
             When target-domain data are expensive to collect and therefore scarce, policy gradient methods such as PPO
-            become unstable due to noisy gradient estimates. The figure below shows the performance of
-            <span class="ppo">PPO (blue)</span> with increasing HF data budgets.
+            become unstable due to noisy gradient estimates. The figure below shows the performance of PPO trained on
+            HF data alone (<span class="ppo">PPO HF-Only, blue</span>) with increasing HF data budgets.
           </p>
         </div>
       </div>
     </div>
 
     <figure class="figure-block" id="fig-scaling">
-      <a href="static/images/fig1_scaling.png" target="_blank">
+      <a href="static/images/fig1_scaling.png" target="_blank" title="Open full-size figure">
         <img src="static/images/fig1_scaling.png" width="1920" height="469"
           alt="Bar chart of HF evaluation returns on H1 Rough versus HF data budget for MFPG-PPO and PPO HF-Only, with snapshots of both policies">
       </a>
@@ -352,7 +349,9 @@ End paper abstract -->
         budgets are set by the number of parallel HF training environments and expressed as fractions of the Isaac Lab
         default (4096 environments). At each budget, <span class="mfpg">MFPG-PPO</span> uses the same amount of HF data
         as <span class="ppo">PPO HF-Only</span>, plus abundant LF data from a simplified simulator. PPO LF-Only (gray)
-        trains on LF data alone.
+        trains on LF data alone and is evaluated in the HF environment. The snapshots show the MFPG-PPO policy walking
+        across the terrain, whereas the PPO HF-Only policy remains on its knees despite using 4&times; more HF training
+        data.
       </figcaption>
     </figure>
 
@@ -397,7 +396,7 @@ End paper abstract -->
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
+        <div class="content prose">
           <p>
             When LF simulation data are also available, exploiting multi-fidelity data requires care, as it can easily
             bias the policy updates and degrade performance in the target HF environment.
@@ -416,7 +415,7 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Key Idea</h2>
-        <div class="content has-text-justified">
+        <div class="content prose">
           <p>
             MFPG-PPO constructs a <strong>control variate</strong>&mdash;a correlated auxiliary random variable with a known
             mean&mdash;for the HF policy gradient estimator to improve HF sample efficiency while remaining robust to LF
@@ -433,7 +432,7 @@ End paper abstract -->
     </div>
 
     <figure class="figure-block" id="fig-pipeline">
-      <a href="static/images/fig2_pipeline.png" target="_blank">
+      <a href="static/images/fig2_pipeline.png" target="_blank" title="Open full-size figure">
         <img src="static/images/fig2_pipeline.png" width="1920" height="671" loading="lazy"
           alt="Diagram of the HF, coupled LF, and uncoupled LF rollouts collected by MFPG-PPO in simulation and on a physical robot">
       </a>
@@ -447,7 +446,7 @@ End paper abstract -->
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
+        <div class="content prose">
           <p>
             Given the three batches of transitions, MFPG-PPO constructs a control-variate policy gradient estimator
             \(\nabla_\theta L^{\mathrm{MF}}(\theta)\) with
@@ -460,7 +459,10 @@ End paper abstract -->
             where \(k\) indexes rollouts and \(t\) their steps, \(\mathcal{P}\) indexes the paired HF and coupled LF
             statistics, and \(\mathcal{U}\) the uncoupled LF statistics. Each statistic is PPO&rsquo;s clipped surrogate
           </p>
-          $$X_{k,t}(\theta) = \min\Big( \omega_{k,t}\, \hat{A}_{k,t},\; \operatorname{clip}(\omega_{k,t}, 1-\epsilon, 1+\epsilon)\, \hat{A}_{k,t} \Big), \qquad \omega_{k,t} = \frac{\pi_\theta(a_{k,t} \mid s_{k,t})}{\pi_{\theta_{\mathrm{old}}}(a_{k,t} \mid s_{k,t})},$$
+          $$\begin{gathered}
+            X_{k,t}(\theta) = \min\Big( \omega_{k,t}\, \hat{A}_{k,t},\; \operatorname{clip}(\omega_{k,t}, 1-\epsilon, 1+\epsilon)\, \hat{A}_{k,t} \Big), \\
+            \omega_{k,t} = \frac{\pi_\theta(a_{k,t} \mid s_{k,t})}{\pi_{\theta_{\mathrm{old}}}(a_{k,t} \mid s_{k,t})},
+          \end{gathered}$$
           <p>
             with advantage estimate \(\hat{A}_{k,t}\) and clipping range \(\epsilon\).
           </p>
@@ -481,13 +483,14 @@ End paper abstract -->
               $$c^* = -\frac{\operatorname{Cov}\big(\hf{X^{\mathrm{high}}}, \lf{X^{\mathrm{low}}}\big)}{\operatorname{Var}\big(\lf{X^{\mathrm{low}}}\big)}.$$
             </li>
             <li>
-              The higher the Pearson correlation \(\rho\) between the paired statistics, the stronger the variance
-              reduction:
+              The larger the magnitude of the Pearson correlation \(\rho\) between the paired statistics, the stronger
+              the variance reduction:
               $$\begin{gathered}
                 \rho = \frac{\operatorname{Cov}\big(\hf{X^{\mathrm{high}}}, \lf{X^{\mathrm{low}}}\big)}{\sqrt{\operatorname{Var}\big(\hf{X^{\mathrm{high}}}\big) \operatorname{Var}\big(\lf{X^{\mathrm{low}}}\big)}}, \\
                 \operatorname{Var}\Big[\hf{X^{\mathrm{high}}} + c^*\big(\lf{X^{\mathrm{low}}} - \lf{\mu^{\mathrm{low}}}\big)\Big] = \big(1-\rho^2\big) \operatorname{Var}\big[\hf{X^{\mathrm{high}}}\big].
               \end{gathered}$$
-              A perfect LF simulator (\(\rho = 1\)) would entirely remove the variance in the HF estimate.
+              where \(\lf{\mu^{\mathrm{low}}} = \mathbb{E}\big[\lf{X^{\mathrm{low}}}\big]\) is the exact LF mean. A perfect
+              LF simulator (\(\rho = 1\)) would entirely remove the variance in the HF estimate.
             </li>
           </ul>
         </div>
@@ -556,7 +559,7 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h3 class="title is-4 result-question">How do different uses of LF data scale across tasks and HF budgets?</h3>
-        <div class="content has-text-justified">
+        <div class="content prose">
           <p>
             We compare MFPG-PPO with different baselines on Isaac Lab robot locomotion tasks, where the multi-fidelity
             environments are simulations with physics of different accuracy:
@@ -578,8 +581,8 @@ End paper abstract -->
       </div>
     </div>
 
-    <figure class="figure-block figure-narrow" id="fig-baselines">
-      <a href="static/images/fig8_baselines.png" target="_blank">
+    <figure class="figure-block" id="fig-baselines">
+      <a href="static/images/fig8_baselines.png" target="_blank" title="Open full-size figure">
         <img src="static/images/fig8_baselines.png" width="1720" height="1248" loading="lazy"
           alt="Grid of bar charts with mean HF evaluation returns for each method, task, and HF data budget">
       </a>
@@ -588,7 +591,7 @@ End paper abstract -->
         the Isaac Lab default; error bars show 95% bootstrapped confidence intervals across 6 seeds. Bar colors encode
         the difference from PPO HF-Only (white bars):
         <span class="legend-chip legend-better"></span>better,
-        <span class="legend-chip legend-neutral"></span>not distinguishable (interval covers zero), and
+        <span class="legend-chip legend-neutral"></span>not distinguishable (95% interval of the difference covers zero), and
         <span class="legend-chip legend-worse"></span>worse.
       </figcaption>
     </figure>
@@ -610,14 +613,14 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="message-callout">
-          With only <strong>4 real-robot episodes per update</strong>, neither limited real-world data nor abundant
-          simulation data alone yield a good real-robot policy, whereas MFPG-PPO succeeds by combining them.
+          Neither limited real-world data nor abundant simulation data alone yield a good real-robot policy, whereas
+          MFPG-PPO succeeds by combining them, using only <strong>4 real-robot episodes per update</strong>.
         </div>
       </div>
     </div>
 
     <figure class="figure-block figure-narrow" id="fig-franka-results">
-      <a href="static/images/fig4_franka_ab.png" target="_blank">
+      <a href="static/images/fig4_franka_ab.png" target="_blank" title="Open full-size figure">
         <img src="static/images/fig4_franka_ab.png" width="1319" height="530" loading="lazy"
           alt="Real-robot success rates: final evaluation bars and training curves for MFPG-PPO and PPO HF-Only">
       </a>
