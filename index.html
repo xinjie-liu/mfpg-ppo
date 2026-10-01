@@ -3,68 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
+  <meta name="description" content="MFPG-PPO stabilizes data-scarce on-policy RL by using abundant low-fidelity simulation data as a control variate for scarce high-fidelity policy gradient estimates.">
+  <meta name="keywords" content="reinforcement learning, multi-fidelity, policy gradient, control variates, PPO, sim-to-real, robot learning, data-scarce reinforcement learning">
+  <meta name="author" content="Xinjie Liu, Ruihan Zhao, Anirban Chaudhuri, Cyrus Neary, Ufuk Topcu, David Fridovich-Keil">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
+  <!-- TODO: Update the URLs below if the final site URL differs from https://xinjie-liu.github.io/mfpg-ppo/ -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:site_name" content="University of Texas at Austin">
+  <meta property="og:title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
+  <meta property="og:description" content="MFPG-PPO stabilizes data-scarce on-policy RL by using abundant low-fidelity simulation data as a control variate for scarce high-fidelity policy gradient estimates.">
+  <meta property="og:url" content="https://xinjie-liu.github.io/mfpg-ppo/">
+  <meta property="og:image" content="https://xinjie-liu.github.io/mfpg-ppo/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:image:alt" content="MFPG-PPO scales monotonically with the high-fidelity data budget on a humanoid locomotion task">
+  <!-- TODO: Set the publication time once the paper is on arXiv
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  -->
+  <meta property="article:author" content="Xinjie Liu">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="reinforcement learning">
+  <meta property="article:tag" content="multi-fidelity">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <!-- TODO: Add Twitter handles if desired
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  -->
+  <meta name="twitter:title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
+  <meta name="twitter:description" content="MFPG-PPO stabilizes data-scarce on-policy RL by using abundant low-fidelity simulation data as a control variate for scarce high-fidelity policy gradient estimates.">
+  <meta name="twitter:image" content="https://xinjie-liu.github.io/mfpg-ppo/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="MFPG-PPO scales monotonically with the high-fidelity data budget on a humanoid locomotion task">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
+  <meta name="citation_title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
+  <meta name="citation_author" content="Liu, Xinjie">
+  <meta name="citation_author" content="Zhao, Ruihan">
+  <meta name="citation_author" content="Chaudhuri, Anirban">
+  <meta name="citation_author" content="Neary, Cyrus">
+  <meta name="citation_author" content="Topcu, Ufuk">
+  <meta name="citation_author" content="Fridovich-Keil, David">
+  <meta name="citation_publication_date" content="2026">
+  <!-- TODO: Add once the paper is on arXiv
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/ARXIV_PAPER_ID">
+  -->
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,23 +69,23 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
+  <title>Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning | MFPG-PPO</title>
+
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.css" integrity="sha384-nH0MfJ44wi1dd7w6jinlyBgljjS8EJAh2JBoRad8a3VDw2K69vfaaqm4WnR+gXtA" crossorigin="anonymous">
+
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -97,10 +93,10 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -108,62 +104,48 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
+  <!-- Math rendering: \hf{} and \lf{} color high- and low-fidelity terms as in the paper's figures -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.js" integrity="sha384-CwjPRVHTvLiMBFjEoij+QZViMV5rhTOIp7CJzl24JEqpRDA1sJFHVXXLURktbYYp" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}],
+      macros: {'\\hf': '\\textcolor{##B3261E}{#1}', '\\lf': '\\textcolor{##00696D}{#1}'},
+      throwOnError: false
+    });"></script>
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning",
+    "description": "MFPG-PPO stabilizes data-scarce on-policy RL by using abundant low-fidelity simulation data as a control variate for scarce high-fidelity policy gradient estimates.",
     "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
+      {"@type": "Person", "name": "Xinjie Liu", "affiliation": {"@type": "Organization", "name": "University of Texas at Austin"}},
+      {"@type": "Person", "name": "Ruihan Zhao", "affiliation": {"@type": "Organization", "name": "University of Texas at Austin"}},
+      {"@type": "Person", "name": "Anirban Chaudhuri", "affiliation": {"@type": "Organization", "name": "University of Texas at Austin"}},
+      {"@type": "Person", "name": "Cyrus Neary", "affiliation": {"@type": "Organization", "name": "University of British Columbia"}},
+      {"@type": "Person", "name": "Ufuk Topcu", "affiliation": {"@type": "Organization", "name": "University of Texas at Austin"}},
+      {"@type": "Person", "name": "David Fridovich-Keil", "affiliation": {"@type": "Organization", "name": "University of Texas at Austin"}}
     ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://xinjie-liu.github.io/mfpg-ppo/",
+    "image": "https://xinjie-liu.github.io/mfpg-ppo/static/images/social_preview.png",
+    "keywords": ["reinforcement learning", "multi-fidelity", "policy gradient", "control variates", "PPO", "robot learning"],
+    "abstract": "Policy gradient methods for on-policy reinforcement learning can become unstable when expensive, scarce target-domain data yield noisy gradient estimates. We address this challenge by complementing limited high-fidelity target-domain data with abundant, cheap, but biased low-fidelity data, e.g., from a simplified simulator. Most existing methods directly optimize biased objectives based on low-fidelity data. In contrast, the recently introduced multi-fidelity policy gradient (MFPG) framework uses low-fidelity data solely to construct a control variate that reduces variance and improves high-fidelity data efficiency without biasing the policy gradient estimator. However, published work on MFPG is limited to REINFORCE on small-scale simulation tasks. We develop MFPG for modern actor-critic learning in GPU-parallel simulation and on a physical robot. Our analysis and experiments show that naive extensions to proximal policy optimization (PPO) can lose cross-fidelity correlation or inflate variance. Our MFPG-PPO addresses these failures by redesigning the sampling, advantage estimation, and control variate construction to preserve cross-fidelity correlation, and by monitoring estimator uncertainty to prevent variance inflation. We also introduce a budget-aware MFPG-PPO to divide a fixed sampling budget among high- and low-fidelity data sources. Across simulated robot locomotion tasks of varying low-to-high-fidelity transfer difficulty and high-fidelity data budgets, MFPG-PPO improves upon PPO trained on high-fidelity data alone in nearly all settings, and consistently matches the performance of PPO trained with 16x more high-fidelity data on the hardest task at the smallest high-fidelity budgets. In contrast, most baselines that use low-fidelity data perform well only where direct low-to-high-fidelity transfer succeeds. MFPG-PPO enables stable learning on a physical Franka arm using only 4 real-robot episodes per update and no human demonstrations.",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://xinjie-liu.github.io/mfpg-ppo/"
     },
     "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
+      {"@type": "Thing", "name": "Reinforcement learning"},
+      {"@type": "Thing", "name": "Robot learning"}
     ]
   }
   </script>
-  
-  <!-- Website/Organization Structured Data -->
+
+  <!-- Website/Organization Structured Data (unused)
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -177,6 +159,7 @@
     ]
   }
   </script>
+  -->
 </head>
 <body>
 
@@ -186,160 +169,118 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning</h1>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="https://xinjie-liu.github.io/" target="_blank">Xinjie Liu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://philipzrh.com/" target="_blank">Ruihan Zhao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.anirbanc.com/" target="_blank">Anirban Chaudhuri</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.cyrusneary.com/" target="_blank">Cyrus Neary</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://ae.utexas.edu/person/ufuk-topcu/" target="_blank">Ufuk Topcu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://dfridovi.github.io/" target="_blank">David Fridovich-Keil</a><sup>1</sup>
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors publication-affiliations">
+              <span class="author-block"><sup>1</sup>University of Texas at Austin</span>
+              <span class="author-block"><sup>2</sup>University of British Columbia</span>
+              <!-- No equal contribution
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+              -->
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: Link the arXiv PDF and remove is-coming-soon once available -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark is-coming-soon" aria-disabled="true" title="Coming soon">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
+                    <span>Paper</span>
+                    <span class="coming-soon-tag">coming soon</span>
+                  </a>
+                </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
+                <!-- Supplementary material (unused)
+                <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
                   </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+                -->
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                <!-- TODO: Link the GitHub repository and remove is-coming-soon once available -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark is-coming-soon" aria-disabled="true" title="Coming soon">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                    <span class="coming-soon-tag">coming soon</span>
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- TODO: Link the arXiv abstract page and remove is-coming-soon once available -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                  <a class="external-link button is-normal is-rounded is-dark is-coming-soon" aria-disabled="true" title="Coming soon">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                    <span class="coming-soon-tag">coming soon</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser video (unused)
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
+      TODO: Replace with your teaser video
       <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
+        TODO: Add your video file path here
         <source src="static/videos/banner_video.mp4" type="video/mp4">
       </video>
-      <!-- TODO: Replace with your video description -->
+      TODO: Replace with your video description
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+End teaser video -->
 
-<!-- Paper abstract -->
+<!-- Paper abstract (unused)
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+          TODO: Replace with your paper abstract
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
           </p>
@@ -348,38 +289,378 @@
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
+End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Overview -->
+<section class="section hero is-light" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <ul class="tldr-list">
+          <li>
+            <strong>MFPG-PPO stabilizes data-scarce on-policy RL.</strong>
+            It enables stable learning with extremely small per-update batches of target-domain data, e.g., as few as
+            <strong>4 real-robot episodes</strong>, or batches up to <strong>512&times; smaller</strong> than in common
+            GPU-simulation RL pipelines.
+          </li>
+          <li>
+            <strong>The key is access to multi-fidelity data.</strong>
+            MFPG-PPO complements limited, expensive <span class="hf">high-fidelity (HF)</span> data from the target
+            environment (a physical system or a high-accuracy simulator) with abundant, inexpensive, but biased
+            <span class="lf">low-fidelity (LF)</span> data, e.g., from a simplified simulator.
+          </li>
+          <li>
+            <strong>Learning stays anchored to HF data.</strong>
+            Most existing multi-fidelity methods directly optimize biased objectives based on LF data, which can easily
+            degrade performance in the target HF environment. MFPG-PPO instead uses multi-fidelity data in a more reliable
+            way that anchors learning to the HF data.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End overview -->
+
+
+<!-- Challenge -->
+<section class="section" id="challenge">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Challenge</h2>
+        <div class="content has-text-justified">
+          <p>
+            When target-domain data are expensive to collect and therefore scarce, policy gradient methods such as PPO
+            become unstable due to noisy gradient estimates. The figure below shows the performance of
+            <span class="ppo">PPO (blue)</span> with increasing HF data budgets.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure-block" id="fig-scaling">
+      <a href="static/images/fig1_scaling.png" target="_blank">
+        <img src="static/images/fig1_scaling.png" width="1920" height="469"
+          alt="Bar chart of HF evaluation returns on H1 Rough versus HF data budget for MFPG-PPO and PPO HF-Only, with snapshots of both policies">
+      </a>
+      <figcaption>
+        Mean HF evaluation returns of final policies on <em>H1 Rough</em>, a simulated humanoid locomotion task on rough
+        terrain, across 6 seeds (dots: individual seeds; error bars: 95% seed-bootstrapped confidence intervals). HF data
+        budgets are set by the number of parallel HF training environments and expressed as fractions of the Isaac Lab
+        default (4096 environments). At each budget, <span class="mfpg">MFPG-PPO</span> uses the same amount of HF data
+        as <span class="ppo">PPO HF-Only</span>, plus abundant LF data from a simplified simulator. PPO LF-Only (gray)
+        trains on LF data alone.
+      </figcaption>
+    </figure>
+
+    <div class="video-grid-block">
+      <p class="video-grid-title"><span class="ppo">PPO HF-Only</span> policies on H1 Rough</p>
+      <div class="video-grid">
+        <div class="video-group">
+          <p class="video-label">1/512&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/ppo_1-512x_seed15.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/512x HF data, seed 15">
+              <source src="static/videos/h1rough/ppo_1-512x_seed15.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/ppo_1-512x_seed16.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/512x HF data, seed 16">
+              <source src="static/videos/h1rough/ppo_1-512x_seed16.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="video-group">
+          <p class="video-label">1/256&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/ppo_1-256x_seed11.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/256x HF data, seed 11">
+              <source src="static/videos/h1rough/ppo_1-256x_seed11.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/ppo_1-256x_seed13.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/256x HF data, seed 13">
+              <source src="static/videos/h1rough/ppo_1-256x_seed13.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="video-group">
+          <p class="video-label">1/128&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/ppo_1-128x_seed7.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/128x HF data, seed 7">
+              <source src="static/videos/h1rough/ppo_1-128x_seed7.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/ppo_1-128x_seed8.jpg" muted loop playsinline preload="none" aria-label="PPO HF-Only policy on H1 Rough with 1/128x HF data, seed 8">
+              <source src="static/videos/h1rough/ppo_1-128x_seed8.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            When LF simulation data are also available, exploiting multi-fidelity data requires care, as it can easily
+            bias the policy updates and degrade performance in the target HF environment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End challenge -->
+
+
+<!-- Key idea -->
+<section class="section hero is-light" id="key-idea">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Key Idea</h2>
+        <div class="content has-text-justified">
+          <p>
+            MFPG-PPO constructs a <strong>control variate</strong>&mdash;a correlated auxiliary random variable with a known
+            mean&mdash;for the HF policy gradient estimator to improve HF sample efficiency while remaining robust to LF
+            data biases.
+          </p>
+          <p>
+            MFPG-PPO collects three batches of transitions: a small batch of <span class="hf">HF transitions</span> (just
+            as in standard, single-fidelity RL), the same number of <span class="lf">coupled LF transitions</span> that
+            serve as &ldquo;LF twins&rdquo; of their HF counterparts, and a large batch of independent,
+            <span class="lf">uncoupled LF transitions</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure-block" id="fig-pipeline">
+      <a href="static/images/fig2_pipeline.png" target="_blank">
+        <img src="static/images/fig2_pipeline.png" width="1920" height="671" loading="lazy"
+          alt="Diagram of the HF, coupled LF, and uncoupled LF rollouts collected by MFPG-PPO in simulation and on a physical robot">
+      </a>
+      <figcaption>
+        Representative HF, coupled LF, and uncoupled LF rollouts are shown with <span class="hf">red circles</span>,
+        <span class="lf">filled teal circles</span>, and <span class="lf">hollow teal squares</span>. We address two
+        scenarios: <strong>(a)</strong> the HF and LF environments are simulations of different accuracy;
+        <strong>(b)</strong> the HF environment is a physical robot, and the LF environment is a simulation.
+      </figcaption>
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Given the three batches of transitions, MFPG-PPO constructs a control-variate policy gradient estimator
+            \(\nabla_\theta L^{\mathrm{MF}}(\theta)\) with
+          </p>
+          $$\begin{gathered}
+            L^{\mathrm{MF}}(\theta) = \frac{1}{|\mathcal{P}|} \sum_{(k,t) \in \mathcal{P}} \Big[ \hf{X^{\mathrm{high}}_{k,t}(\theta)} + c\, \big( \lf{X^{\mathrm{low}}_{k,t}(\theta)} - \lf{\hat{\mu}^{\mathrm{low}}(\theta)} \big) \Big], \\
+            \lf{\hat{\mu}^{\mathrm{low}}(\theta)} = \frac{1}{|\mathcal{U}|} \sum_{(k,t) \in \mathcal{U}} \lf{X^{\mathrm{low}}_{k,t}(\theta)},
+          \end{gathered}$$
+          <p>
+            where \(k\) indexes rollouts and \(t\) their steps, \(\mathcal{P}\) indexes the paired HF and coupled LF
+            statistics, and \(\mathcal{U}\) the uncoupled LF statistics. Each statistic is PPO&rsquo;s clipped surrogate
+          </p>
+          $$X_{k,t}(\theta) = \min\Big( \omega_{k,t}\, \hat{A}_{k,t},\; \operatorname{clip}(\omega_{k,t}, 1-\epsilon, 1+\epsilon)\, \hat{A}_{k,t} \Big), \qquad \omega_{k,t} = \frac{\pi_\theta(a_{k,t} \mid s_{k,t})}{\pi_{\theta_{\mathrm{old}}}(a_{k,t} \mid s_{k,t})},$$
+          <p>
+            with advantage estimate \(\hat{A}_{k,t}\) and clipping range \(\epsilon\).
+          </p>
+          <ul class="idea-list">
+            <li>
+              <span class="lf">Coupled LF transitions</span> are used to construct the control-variate term
+              \(c\,\big(\lf{X^{\mathrm{low}}_{k,t}} - \lf{\hat{\mu}^{\mathrm{low}}}\big)\), which reduces the noise in the
+              HF estimate \(\hf{X^{\mathrm{high}}_{k,t}}\).
+            </li>
+            <li>
+              <span class="lf">Uncoupled LF transitions</span> estimate the LF term&rsquo;s mean
+              \(\lf{\hat{\mu}^{\mathrm{low}}}\), so the correction is (approximately) zero-mean and learning stays anchored
+              to HF data.
+            </li>
+            <li>
+              The coefficient \(c\) is estimated from the collected paired data to match the analytical
+              variance-minimizing solution
+              $$c^* = -\frac{\operatorname{Cov}\big(\hf{X^{\mathrm{high}}}, \lf{X^{\mathrm{low}}}\big)}{\operatorname{Var}\big(\lf{X^{\mathrm{low}}}\big)}.$$
+            </li>
+            <li>
+              The higher the Pearson correlation \(\rho\) between the paired statistics, the stronger the variance
+              reduction:
+              $$\begin{gathered}
+                \rho = \frac{\operatorname{Cov}\big(\hf{X^{\mathrm{high}}}, \lf{X^{\mathrm{low}}}\big)}{\sqrt{\operatorname{Var}\big(\hf{X^{\mathrm{high}}}\big) \operatorname{Var}\big(\lf{X^{\mathrm{low}}}\big)}}, \\
+                \operatorname{Var}\Big[\hf{X^{\mathrm{high}}} + c^*\big(\lf{X^{\mathrm{low}}} - \lf{\mu^{\mathrm{low}}}\big)\Big] = \big(1-\rho^2\big) \operatorname{Var}\big[\hf{X^{\mathrm{high}}}\big].
+              \end{gathered}$$
+              A perfect LF simulator (\(\rho = 1\)) would entirely remove the variance in the HF estimate.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End key idea -->
+
+
+<!-- Key results -->
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Key Results</h2>
+
+        <h3 class="title is-4 result-question">How does MFPG-PPO scale with HF data scarcity?</h3>
+        <div class="message-callout">
+          In the <a href="#fig-scaling">figure above</a>, <span class="mfpg">MFPG-PPO (orange)</span> scales
+          monotonically with the HF data budget and, where <span class="ppo">PPO trained on HF data alone (blue)</span>
+          collapses, matches the mean return of PPO trained with <strong>16&times; more HF data</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="video-grid-block">
+      <p class="video-grid-title"><span class="mfpg">MFPG-PPO</span> policies on H1 Rough</p>
+      <div class="video-grid">
+        <div class="video-group">
+          <p class="video-label">1/512&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/mfpg_1-512x_seed13.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/512x HF data, seed 13">
+              <source src="static/videos/h1rough/mfpg_1-512x_seed13.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/mfpg_1-512x_seed14.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/512x HF data, seed 14">
+              <source src="static/videos/h1rough/mfpg_1-512x_seed14.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="video-group">
+          <p class="video-label">1/256&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/mfpg_1-256x_seed11.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/256x HF data, seed 11">
+              <source src="static/videos/h1rough/mfpg_1-256x_seed11.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/mfpg_1-256x_seed12.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/256x HF data, seed 12">
+              <source src="static/videos/h1rough/mfpg_1-256x_seed12.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="video-group">
+          <p class="video-label">1/128&times; HF data</p>
+          <div class="video-pair">
+            <video poster="static/images/posters/mfpg_1-128x_seed9.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/128x HF data, seed 9">
+              <source src="static/videos/h1rough/mfpg_1-128x_seed9.mp4" type="video/mp4">
+            </video>
+            <video poster="static/images/posters/mfpg_1-128x_seed10.jpg" muted loop playsinline preload="none" aria-label="MFPG-PPO policy on H1 Rough with 1/128x HF data, seed 10">
+              <source src="static/videos/h1rough/mfpg_1-128x_seed10.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4 result-question">How do different uses of LF data scale across tasks and HF budgets?</h3>
+        <div class="content has-text-justified">
+          <p>
+            We compare MFPG-PPO with different baselines on Isaac Lab robot locomotion tasks, where the multi-fidelity
+            environments are simulations with physics of different accuracy:
+          </p>
+          <ul class="baseline-list">
+            <li><strong>PPO HF-Only</strong> uses no LF data.</li>
+            <li><strong>Co-training</strong> (Wei et al., 2025) pools HF and LF data.</li>
+            <li><strong>DARC</strong> (Eysenbach et al., 2021) and <strong>PAR</strong> (Lyu et al., 2024) correct LF rewards.</li>
+            <li><strong>PPO LF-Only</strong> uses no HF data.</li>
+            <li><strong>MFPG-REINFORCE</strong> (Liu et al., 2026) uses control variates.</li>
+            <li>We additionally compare to an off-policy baseline, <strong>SAC HF-Only</strong> (Haarnoja et al., 2018).</li>
+          </ul>
+          <p>Each baseline matches the data budget of MFPG-PPO at each fidelity it consumes.</p>
+        </div>
+        <div class="message-callout">
+          MFPG-PPO is the only method in our comparison that improves upon PPO HF-Only in nearly every setting, is never
+          distinguishably worse, and scales monotonically with more HF data.
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure-block figure-narrow" id="fig-baselines">
+      <a href="static/images/fig8_baselines.png" target="_blank">
+        <img src="static/images/fig8_baselines.png" width="1720" height="1248" loading="lazy"
+          alt="Grid of bar charts with mean HF evaluation returns for each method, task, and HF data budget">
+      </a>
+      <figcaption>
+        Mean HF evaluation returns on four Isaac Lab locomotion tasks at HF data budgets from 1/64&times; to 1/8&times;
+        the Isaac Lab default; error bars show 95% bootstrapped confidence intervals across 6 seeds. Bar colors encode
+        the difference from PPO HF-Only (white bars):
+        <span class="legend-chip legend-better"></span>better,
+        <span class="legend-chip legend-neutral"></span>not distinguishable (interval covers zero), and
+        <span class="legend-chip legend-worse"></span>worse.
+      </figcaption>
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4 result-question">Does MFPG-PPO learn stably on a real robot?</h3>
+      </div>
+    </div>
+
+    <figure class="figure-block" id="fig-franka-setup">
+      <img src="static/images/fig7_franka_setup.jpg" width="1920" height="770" loading="lazy"
+        alt="Physical Franka robot arm next to its ManiSkill simulation counterpart">
+      <figcaption>
+        Multi-fidelity setup for cube picking: a physical Franka arm (HF, left) and its ManiSkill simulation (LF, right).
+      </figcaption>
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="message-callout">
+          With only <strong>4 real-robot episodes per update</strong>, neither limited real-world data nor abundant
+          simulation data alone yield a good real-robot policy, whereas MFPG-PPO succeeds by combining them.
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure-block figure-narrow" id="fig-franka-results">
+      <a href="static/images/fig4_franka_ab.png" target="_blank">
+        <img src="static/images/fig4_franka_ab.png" width="1319" height="530" loading="lazy"
+          alt="Real-robot success rates: final evaluation bars and training curves for MFPG-PPO and PPO HF-Only">
+      </a>
+      <figcaption>
+        <strong>(a)</strong> Final evaluation: success rate on the real robot over 60 episodes (20 per seed).
+        <strong>(b)</strong> Training: success rate on the real robot (solid) and in simulation (dashed). Bars and curves
+        show means across 3 seeds; whiskers and bands show their ranges.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<!-- End key results -->
+
+
+<!-- Image carousel (unused)
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- TODO: Replace with your research result images -->
+        TODO: Replace with your research result images
         <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
+        TODO: Replace with description of this result
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
+        Your image here
         <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
+        Your image here
         <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
+      Your image here
       <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -389,22 +670,22 @@
 </div>
 </div>
 </section>
-<!-- End image carousel -->
+End image carousel -->
 
 
 
 
-<!-- Youtube video -->
+<!-- Youtube video (unused)
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
+      Paper video.
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
+
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
+            TODO: Replace with your YouTube video ID
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
@@ -412,33 +693,33 @@
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+End youtube video -->
 
 
-<!-- Video carousel -->
+<!-- Video carousel (unused)
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
+          TODO: Add poster image for better preview
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
+            Your video file here
             <source src="static/videos/carousel1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
+          TODO: Add poster image for better preview
           <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
+            Your video file here
             <source src="static/videos/carousel2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
+          TODO: Add poster image for better preview
           <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
+            Your video file here
             <source src="static/videos/carousel3.mp4" type="video/mp4">
           </video>
         </div>
@@ -446,31 +727,31 @@
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+End video carousel -->
 
 
 
 
 
 
-<!-- Paper poster -->
+<!-- Paper poster (unused)
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
 
-      <!-- TODO: Replace with your poster PDF -->
+      TODO: Replace with your poster PDF
       <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
           </iframe>
-        
+
       </div>
     </div>
   </section>
-<!--End paper poster -->
+End paper poster -->
 
 
 
-<!--BibTex citation -->
+<!-- BibTex citation (unused until the paper is on arXiv)
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
@@ -489,7 +770,8 @@
 }</code></pre>
     </div>
 </section>
-<!--End BibTex citation -->
+End BibTex citation -->
+  </main>
 
 
   <footer class="footer">
@@ -499,7 +781,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
@@ -511,7 +793,7 @@
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
