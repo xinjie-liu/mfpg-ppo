@@ -58,8 +58,13 @@ window.addEventListener('scroll', function() {
 function setupVideoCarouselAutoplay() {
     const carouselVideos = document.querySelectorAll('.results-carousel video, .video-grid video');
     
-    // Show posters only for users who prefer reduced motion
-    if (carouselVideos.length === 0 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (carouselVideos.length === 0) return;
+
+    // Under reduced motion, don't autoplay; show controls so users can start videos themselves
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        carouselVideos.forEach(video => { video.controls = true; });
+        return;
+    }
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -82,6 +87,17 @@ function setupVideoCarouselAutoplay() {
     carouselVideos.forEach(video => {
         observer.observe(video);
     });
+}
+
+// Mark display equations that overflow their box, so CSS can fade the right edge
+function markOverflowingMath() {
+    const displays = document.querySelectorAll('.katex-display');
+    const update = d => d.classList.toggle('has-more', d.scrollLeft + d.clientWidth < d.scrollWidth - 1);
+    displays.forEach(d => {
+        update(d);
+        d.addEventListener('scroll', () => update(d), {passive: true});
+    });
+    window.addEventListener('resize', () => displays.forEach(update));
 }
 
 $(document).ready(function() {

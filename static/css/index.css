@@ -1,5 +1,31 @@
+/* Palatino clone (TeX Gyre Pagella, GUST Font License) for systems without Palatino */
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  src: url('../fonts/texgyrepagella-regular-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  src: url('../fonts/texgyrepagella-italic-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  src: url('../fonts/texgyrepagella-bold-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Modern CSS Variables for consistent theming */
 :root {
+  --font-serif: 'Palatino Linotype', Palatino, 'TeX Gyre Pagella', 'Book Antiqua', serif;
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
   --secondary-color: #64748b;
@@ -37,7 +63,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-serif);
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 16px;
@@ -46,6 +72,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+button, input, select, textarea {
+  font-family: var(--font-serif);
+}
 
 /* Modern Button Styles */
 .button {
@@ -117,14 +147,14 @@ body {
 }
 
 .teaser {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-serif);
 }
 
 
 /* Publication Content Styling */
 .publication-title {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 800 !important;
+    font-family: var(--font-serif) !important;
+    font-weight: 700 !important;
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
@@ -154,7 +184,7 @@ body {
 }
 
 .publication-authors {
-    font-family: 'Inter', sans-serif !important;
+    font-family: var(--font-serif) !important;
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -318,7 +348,7 @@ body {
 
 /* Section Titles */
 .title.is-3 {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 700 !important;
   color: var(--text-primary);
   margin-bottom: 2rem !important;
@@ -627,20 +657,26 @@ a:focus {
 
 .tldr-list li {
   position: relative;
-  margin-bottom: 1rem;
-  padding: 1.1rem 1.25rem 1.1rem 1.5rem;
-  background: var(--background-primary);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--mfpg-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  padding-left: 1.4rem;
+  font-size: 1.1rem;
+  line-height: 1.75;
   color: #475569;
 }
 
 .tldr-list li:last-child {
   margin-bottom: 0;
+}
+
+.tldr-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--mfpg-color);
 }
 
 .tldr-list strong {
@@ -764,6 +800,12 @@ a:focus {
   padding: 0.25rem 0;
 }
 
+/* Fade the right edge of equations that scroll horizontally (cue to scroll) */
+.content .katex-display.has-more {
+  -webkit-mask-image: linear-gradient(to right, #000 92%, transparent);
+  mask-image: linear-gradient(to right, #000 92%, transparent);
+}
+
 .result-question {
   margin-top: 2.5rem !important;
   margin-bottom: 1.25rem !important;
@@ -771,14 +813,39 @@ a:focus {
 }
 
 .message-callout {
-  margin: 1.25rem 0 1.5rem;
-  padding: 1rem 1.25rem;
-  background: #FDF1EC;
-  border-left: 4px solid var(--mfpg-color);
-  border-radius: var(--border-radius);
-  font-size: 1.05rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 1.1rem 1.5rem;
+  background: #fafbfc;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text-primary);
+}
+
+/* Numbered steps in the key idea (.content prefix outranks Bulma's .content h3) */
+.content .step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 2.25rem 0 0.9rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.step-num {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1.5px solid var(--text-primary);
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -798,12 +865,6 @@ a:focus {
 
   .content.prose {
     font-size: 1rem;
-  }
-
-  /* Fade the right edge as a cue that wide equations scroll horizontally */
-  .content .katex-display {
-    -webkit-mask-image: linear-gradient(to right, #000 92%, transparent);
-    mask-image: linear-gradient(to right, #000 92%, transparent);
   }
 }
 

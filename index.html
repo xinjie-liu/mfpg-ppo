@@ -62,8 +62,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -94,9 +92,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -112,7 +107,8 @@
       delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}],
       macros: {'\\hf': '\\textcolor{##B3261E}{#1}', '\\lf': '\\textcolor{##00696D}{#1}'},
       throwOnError: false
-    });"></script>
+    });
+    markOverflowingMath();"></script>
 
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -276,7 +272,7 @@ End teaser video -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content prose">
+        <div class="content has-text-justified">
           TODO: Replace with your paper abstract
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
@@ -421,6 +417,7 @@ End paper abstract -->
             mean&mdash;for the HF policy gradient estimator to improve HF sample efficiency while remaining robust to LF
             data biases.
           </p>
+          <h3 class="step-title"><span class="step-num">1</span>Collect three batches of transitions</h3>
           <p>
             MFPG-PPO collects three batches of transitions: a small batch of <span class="hf">HF transitions</span> (just
             as in standard, single-fidelity RL), the same number of <span class="lf">coupled LF transitions</span> that
@@ -447,6 +444,7 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="content prose">
+          <h3 class="step-title"><span class="step-num">2</span>Construct a control-variate estimator</h3>
           <p>
             Given the three batches of transitions, MFPG-PPO constructs a control-variate policy gradient estimator
             \(\nabla_\theta L^{\mathrm{MF}}(\theta)\) with
@@ -470,12 +468,9 @@ End paper abstract -->
             <li>
               <span class="lf">Coupled LF transitions</span> are used to construct the control-variate term
               \(c\,\big(\lf{X^{\mathrm{low}}_{k,t}} - \lf{\hat{\mu}^{\mathrm{low}}}\big)\), which reduces the noise in the
-              HF estimate \(\hf{X^{\mathrm{high}}_{k,t}}\).
-            </li>
-            <li>
-              <span class="lf">Uncoupled LF transitions</span> estimate the LF term&rsquo;s mean
-              \(\lf{\hat{\mu}^{\mathrm{low}}}\), so the correction is (approximately) zero-mean and learning stays anchored
-              to HF data.
+              HF estimate \(\hf{X^{\mathrm{high}}_{k,t}}\). <span class="lf">Uncoupled LF transitions</span> estimate the
+              LF term&rsquo;s mean \(\lf{\hat{\mu}^{\mathrm{low}}}\), so the correction is (approximately) zero-mean and
+              learning stays anchored to HF data.
             </li>
             <li>
               The coefficient \(c\) is estimated from the collected paired data to match the analytical
@@ -487,7 +482,7 @@ End paper abstract -->
               the variance reduction:
               $$\begin{gathered}
                 \rho = \frac{\operatorname{Cov}\big(\hf{X^{\mathrm{high}}}, \lf{X^{\mathrm{low}}}\big)}{\sqrt{\operatorname{Var}\big(\hf{X^{\mathrm{high}}}\big) \operatorname{Var}\big(\lf{X^{\mathrm{low}}}\big)}}, \\
-                \operatorname{Var}\Big[\hf{X^{\mathrm{high}}} + c^*\big(\lf{X^{\mathrm{low}}} - \lf{\mu^{\mathrm{low}}}\big)\Big] = \big(1-\rho^2\big) \operatorname{Var}\big[\hf{X^{\mathrm{high}}}\big].
+                \operatorname{Var}\Big[\hf{X^{\mathrm{high}}} + c^*\big(\lf{X^{\mathrm{low}}} - \lf{\mu^{\mathrm{low}}}\big)\Big] = \big(1-\rho^2\big) \operatorname{Var}\big[\hf{X^{\mathrm{high}}}\big],
               \end{gathered}$$
               where \(\lf{\mu^{\mathrm{low}}} = \mathbb{E}\big[\lf{X^{\mathrm{low}}}\big]\) is the exact LF mean. A perfect
               LF simulator (\(\rho = 1\)) would entirely remove the variance in the HF estimate.
