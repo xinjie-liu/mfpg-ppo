@@ -327,7 +327,9 @@ End paper abstract -->
           <p>
             When target-domain data are expensive to collect and therefore scarce, policy gradient methods such as PPO
             become unstable due to noisy gradient estimates. The figure below shows the performance of PPO trained on
-            HF data alone (<span class="ppo">PPO HF-Only, blue</span>) with increasing HF data budgets.
+            HF data alone (<span class="ppo">PPO HF-Only, blue</span>) with increasing HF data budgets. When LF
+            simulation data are also available, exploiting multi-fidelity data requires care, as it can easily bias the
+            policy updates and degrade performance in the target HF environment.
           </p>
         </div>
       </div>
@@ -385,17 +387,6 @@ End paper abstract -->
               <source src="static/videos/h1rough/ppo_1-128x_seed8.mp4" type="video/mp4">
             </video>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <div class="content prose">
-          <p>
-            When LF simulation data are also available, exploiting multi-fidelity data requires care, as it can easily
-            bias the policy updates and degrade performance in the target HF environment.
-          </p>
         </div>
       </div>
     </div>
