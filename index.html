@@ -598,13 +598,22 @@ End paper abstract -->
       </div>
     </div>
 
-    <figure class="figure-block figure-video" id="fig-franka-setup">
-      <video poster="static/images/posters/franka_cube_picking.jpg" muted loop playsinline preload="none" aria-label="Physical Franka arm picking up a cube">
-        <source src="static/videos/franka/franka_cube_picking.mp4" type="video/mp4">
-      </video>
+    <figure class="figure-block" id="fig-franka-setup">
+      <div class="media-pair">
+        <div>
+          <p class="video-label"><span class="hf">Physical Franka (HF)</span></p>
+          <video poster="static/images/posters/franka_cube_picking.jpg" muted loop playsinline preload="none" aria-label="Physical Franka arm picking up a cube">
+            <source src="static/videos/franka/franka_cube_picking.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <p class="video-label"><span class="lf">ManiSkill simulation (LF)</span></p>
+          <img src="static/images/franka_sim.jpg" width="960" height="720" loading="lazy"
+            alt="Franka arm and a red cube on a wooden table in ManiSkill simulation">
+        </div>
+      </div>
       <figcaption>
-        Multi-fidelity setup for cube picking: a physical Franka arm serves as the HF environment, and a ManiSkill
-        simulation of the same task serves as the LF environment.
+        Multi-fidelity setup for cube picking: a physical Franka arm (HF, left) and its ManiSkill simulation (LF, right).
       </figcaption>
     </figure>
 
