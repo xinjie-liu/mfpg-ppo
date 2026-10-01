@@ -54,9 +54,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Video carousel and video grid autoplay when in view
+// Video carousel, video grid, and figure video autoplay when in view
 function setupVideoCarouselAutoplay() {
-    const carouselVideos = document.querySelectorAll('.results-carousel video, .video-grid video');
+    const carouselVideos = document.querySelectorAll('.results-carousel video, .video-grid video, .figure-block video');
     
     if (carouselVideos.length === 0) return;
 

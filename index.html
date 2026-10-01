@@ -13,7 +13,6 @@
   <meta name="language" content="English">
 
   <!-- Open Graph / Facebook -->
-  <!-- TODO: Update the URLs below if the final site URL differs from https://xinjie-liu.github.io/mfpg-ppo/ -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MFPG-PPO">
   <meta property="og:title" content="Multi-Fidelity Policy Gradients Stabilize Data-Scarce Reinforcement Learning">
@@ -583,7 +582,9 @@ End paper abstract -->
       </a>
       <figcaption>
         Mean HF evaluation returns on four Isaac Lab locomotion tasks at HF data budgets from 1/64&times; to 1/8&times;
-        the Isaac Lab default; error bars show 95% bootstrapped confidence intervals across 6 seeds. Bar colors encode
+        the Isaac Lab default; error bars show 95% bootstrapped confidence intervals across 6 seeds. MFPG-PPO-FR uses a
+        fixed HF-to-LF sampling ratio, whereas MFPG-PPO-BA, the budget-aware variant, allocates a fixed sampling budget
+        across fidelities online. Bar colors encode
         the difference from PPO HF-Only (white bars):
         <span class="legend-chip legend-better"></span>better,
         <span class="legend-chip legend-neutral"></span>not distinguishable (95% interval of the difference covers zero), and
@@ -597,11 +598,13 @@ End paper abstract -->
       </div>
     </div>
 
-    <figure class="figure-block" id="fig-franka-setup">
-      <img src="static/images/fig7_franka_setup.jpg" width="1920" height="770" loading="lazy"
-        alt="Physical Franka robot arm next to its ManiSkill simulation counterpart">
+    <figure class="figure-block figure-video" id="fig-franka-setup">
+      <video poster="static/images/posters/franka_cube_picking.jpg" muted loop playsinline preload="none" aria-label="Physical Franka arm picking up a cube">
+        <source src="static/videos/franka/franka_cube_picking.mp4" type="video/mp4">
+      </video>
       <figcaption>
-        Multi-fidelity setup for cube picking: a physical Franka arm (HF, left) and its ManiSkill simulation (LF, right).
+        Multi-fidelity setup for cube picking: a physical Franka arm serves as the HF environment, and a ManiSkill
+        simulation of the same task serves as the LF environment.
       </figcaption>
     </figure>
 
@@ -621,6 +624,8 @@ End paper abstract -->
       </a>
       <figcaption>
         <strong>(a)</strong> Final evaluation: success rate on the real robot over 60 episodes (20 per seed).
+        Horizontal lines mark two simulation-only references, each evaluated over 40 real-robot episodes: the shared
+        warm-start checkpoint and a simulation-trained policy well past convergence.
         <strong>(b)</strong> Training: success rate on the real robot (solid) and in simulation (dashed). Bars and curves
         show means across 3 seeds; whiskers and bands show their ranges.
       </figcaption>

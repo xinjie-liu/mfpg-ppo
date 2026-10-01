@@ -703,6 +703,18 @@ a:focus {
   max-width: 820px;
 }
 
+.figure-block.figure-video {
+  max-width: 720px;
+}
+
+.figure-block video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  background: var(--background-accent);
+}
+
 .figure-block a img {
   cursor: zoom-in;
 }
