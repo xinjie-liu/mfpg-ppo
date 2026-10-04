@@ -841,6 +841,10 @@ a:focus {
   color: var(--text-primary);
 }
 
+.message-callout .takeaway-label {
+  color: var(--mfpg-text);
+}
+
 /* Numbered steps in the key idea (.content prefix outranks Bulma's .content h3) */
 .content .step-title {
   display: flex;

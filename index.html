@@ -327,9 +327,9 @@ End paper abstract -->
           <p>
             When target-domain data are expensive to collect and therefore scarce, policy gradient methods such as PPO
             become unstable due to noisy gradient estimates. The figure below shows the performance of PPO trained on
-            HF data alone (<span class="ppo">PPO HF-Only, blue</span>) with increasing HF data budgets. When LF
-            simulation data are also available, exploiting multi-fidelity data requires care, as it can easily bias the
-            policy updates and degrade performance in the target HF environment.
+            HF data alone (<span class="ppo">PPO HF-Only, blue</span>) as the HF data budget decreases (from right to
+            left along the x-axis). When LF simulation data are also available, exploiting multi-fidelity data requires
+            care, as it can easily bias the policy updates and degrade performance in the target HF environment.
           </p>
         </div>
       </div>
@@ -412,7 +412,8 @@ End paper abstract -->
             MFPG-PPO collects three batches of transitions: a small batch of <span class="hf">HF transitions</span> (just
             as in standard, single-fidelity RL), the same number of <span class="lf">coupled LF transitions</span> that
             serve as &ldquo;LF twins&rdquo; of their HF counterparts, and a large batch of independent,
-            <span class="lf">uncoupled LF transitions</span>.
+            <span class="lf">uncoupled LF transitions</span>. See Section&nbsp;4.1 of the paper for how these transitions are
+            collected in simulation and on a physical robot.
           </p>
         </div>
       </div>
@@ -495,9 +496,10 @@ End paper abstract -->
 
         <h3 class="title is-4 result-question">How does MFPG-PPO scale with HF data scarcity?</h3>
         <div class="message-callout">
-          In the <a href="#fig-scaling">figure above</a>, <span class="mfpg">MFPG-PPO (orange)</span> scales
-          monotonically with the HF data budget and, where <span class="ppo">PPO trained on HF data alone (blue)</span>
-          collapses, matches the mean return of PPO trained with <strong>16&times; more HF data</strong>.
+          <strong class="takeaway-label">Takeaway 1:</strong> In the <a href="#fig-scaling">figure above</a>,
+          <span class="mfpg">MFPG-PPO (orange)</span> scales monotonically with the HF data budget and, where
+          <span class="ppo">PPO trained on HF data alone (blue)</span> collapses, matches the mean return of PPO trained
+          with <strong>16&times; more HF data</strong>.
         </div>
       </div>
     </div>
@@ -560,8 +562,9 @@ End paper abstract -->
           <p>Each baseline matches the data budget of MFPG-PPO at each fidelity it consumes.</p>
         </div>
         <div class="message-callout">
-          MFPG-PPO is the only method in our comparison that improves upon PPO HF-Only in nearly every setting, is never
-          distinguishably worse, and scales monotonically with more HF data.
+          <strong class="takeaway-label">Takeaway 2:</strong> MFPG-PPO is the only method in our comparison that
+          improves upon PPO HF-Only in nearly every setting, is never distinguishably worse, and scales monotonically
+          with more HF data.
         </div>
       </div>
     </div>
@@ -611,8 +614,9 @@ End paper abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="message-callout">
-          Neither limited real-world data nor abundant simulation data alone yield a good real-robot policy, whereas
-          MFPG-PPO succeeds by combining them, using only <strong>4 real-robot episodes per update</strong>.
+          <strong class="takeaway-label">Takeaway 3:</strong> Neither limited real-world data nor abundant simulation
+          data alone yield a good real-robot policy, whereas MFPG-PPO succeeds by combining them, using only
+          <strong>4 real-robot episodes per update</strong>.
         </div>
       </div>
     </div>
